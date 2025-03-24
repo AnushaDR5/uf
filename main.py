@@ -278,46 +278,46 @@ def ann_app():
             import streamlit as st
 
 # Collecting diet preference
-diet_preference = st.radio("Do you follow a specific diet?", ["Select an option", "Yes", "No"], index=0)
-
-# Mock risk level variable for testing
-risk_level = "🔴 High Risk"  # Replace with dynamic logic in production
-clean_risk_level = risk_level.split()[-1]  # Extracts "Low", "Moderate", or "High"
-
-# Submit button logic
-if st.button("Submit"):
-    if diet_preference == "Select an option":
-        st.warning("⚠️ Please select **Yes** or **No** for personalized diet advice.")
-    
-    else:  # Handling "Yes" or "No" inputs
-        if diet_preference == "Yes":
-            st.markdown("### ✅ Tailored Diet Advice Based on Your Risk Level")
-        else:  # diet_preference == "No"
-            st.markdown("### 🍽️ General Health Tips (No Specific Diet)")
-
-        # Diet recommendations based on risk level
-        if clean_risk_level == "High":
-            st.markdown("""
-            **🚨 High Risk**:
-            - 🥗 Prioritize **whole grains**, **lean proteins**, **healthy fats**.
-            - ❌ Avoid processed, fried foods, and sugary snacks.
-            - 🩺 Consult a dietitian for an optimized plan.
-            """)
-        elif clean_risk_level == "Moderate":
-            st.markdown("""
-            **⚡ Moderate Risk**:
-            - 🍎 Increase fiber from fruits, veggies, whole grains.
-            - 🥩 Balance lean protein and healthy fats.
-            - 🏋️ Regular exercise enhances results.
-            """)
-        elif clean_risk_level == "Low":
-            st.markdown("""
-            **🎉 Low Risk**:
-            - ✅ Maintain a balanced diet—fruits, greens, healthy fats.
-            - ✨ Keep up the good work—your heart is smiling!
-            """)
-        else:
-            st.warning("⚠️ Unexpected risk level detected. Please check your inputs.")
+            diet_preference = st.radio("Do you follow a specific diet?", ["Select an option", "Yes", "No"], index=0)
+            
+            # Mock risk level variable for testing
+            risk_level = "🔴 High Risk"  # Replace with dynamic logic in production
+            clean_risk_level = risk_level.split()[-1]  # Extracts "Low", "Moderate", or "High"
+            
+            # Submit button logic
+            if st.button("Submit"):
+                if diet_preference == "Select an option":
+                    st.warning("⚠️ Please select **Yes** or **No** for personalized diet advice.")
+                
+                else:  # Handling "Yes" or "No" inputs
+                    if diet_preference == "Yes":
+                        st.markdown("### ✅ Tailored Diet Advice Based on Your Risk Level")
+                    else:  # diet_preference == "No"
+                        st.markdown("### 🍽️ General Health Tips (No Specific Diet)")
+            
+                    # Diet recommendations based on risk level
+                    if clean_risk_level == "High":
+                        st.markdown("""
+                        **🚨 High Risk**:
+                        - 🥗 Prioritize **whole grains**, **lean proteins**, **healthy fats**.
+                        - ❌ Avoid processed, fried foods, and sugary snacks.
+                        - 🩺 Consult a dietitian for an optimized plan.
+                        """)
+                    elif clean_risk_level == "Moderate":
+                        st.markdown("""
+                        **⚡ Moderate Risk**:
+                        - 🍎 Increase fiber from fruits, veggies, whole grains.
+                        - 🥩 Balance lean protein and healthy fats.
+                        - 🏋️ Regular exercise enhances results.
+                        """)
+                    elif clean_risk_level == "Low":
+                        st.markdown("""
+                        **🎉 Low Risk**:
+                        - ✅ Maintain a balanced diet—fruits, greens, healthy fats.
+                        - ✨ Keep up the good work—your heart is smiling!
+                        """)
+                    else:
+                        st.warning("⚠️ Unexpected risk level detected. Please check your inputs.")
 
 
 
