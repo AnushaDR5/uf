@@ -275,7 +275,6 @@ def ann_app():
             st.markdown("### 🍽️ Diet Preferences")
 
             # Force Yes/No selection — default "Select an option"
-            import streamlit as st
 
 # Collecting diet preference
             diet_preference = st.radio("Do you follow a specific diet?", ["Select an option", "Yes", "No"], index=0)
